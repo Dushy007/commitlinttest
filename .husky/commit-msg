@@ -1,12 +1,12 @@
 #!/bin/bash
 
 export MESSAGE=$(<$1)
-export JIRA_ISSUE_TAG="SUIC-[0-9]+[[:space:]]+[a-z]+"
+export JIRA_ID="SUIC-[0-9]+[[:space:]]+[a-z]+"
 
-if [[ $MESSAGE =~ $JIRA_ISSUE_TAG ]]; then
-echo -e “Great, your commit message contains a JIRA issue!”
+if [[ $MESSAGE =~ $JIRA_ID ]]; then
+echo -e “Great, your commit message contains a JIRA ID!”
 exit 0;
 fi
 
-echo -e “You forgot to add a JIRA issue number!”;
+echo -e “You forgot to add a JIRA ID!”;
 exit 1;
